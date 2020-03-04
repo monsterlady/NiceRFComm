@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="comm3.0_solaris_i586">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/comm3.0_solaris_i586.zip!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Desktop/comm3.0_solaris_i586.zip!/commapi/docs/javadoc/dist" />
+      <root url="jar://$USER_HOME$/Desktop/comm3.0_solaris_i586.zip!/commapi/docs/javadoc/impl" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Desktop/comm3.0_solaris_i586.zip!/commapi/examples/BlackBox" />
+      <root url="jar://$USER_HOME$/Desktop/comm3.0_solaris_i586.zip!/commapi/examples/NullDriver" />
+      <root url="jar://$USER_HOME$/Desktop/comm3.0_solaris_i586.zip!/commapi/examples/ParallelBlackBox" />
+      <root url="jar://$USER_HOME$/Desktop/comm3.0_solaris_i586.zip!/commapi/examples/SerialDemo" />
+      <root url="jar://$USER_HOME$/Desktop/comm3.0_solaris_i586.zip!/commapi/examples/Simple" />
+    </SOURCES>
+  </library>
+</component>
