@@ -19,9 +19,10 @@ public class SimpleWrite {
         int i;
         while (portList.hasMoreElements()) {
             portId = (CommPortIdentifier) portList.nextElement();
+            System.out.println(portId.getName());
             if (portId.getPortType() == CommPortIdentifier.PORT_SERIAL) {
-                if (portId.getName().equals("COM7")) {
-                    System.out.println("COM7 Found");
+                if (portId.getName().equals("COM3")) {
+                    System.out.println("Ready to send msg...");
                     // if (portId.getName().equals("/dev/term/a")) {
                     try {
                         serialPort = (SerialPort)
@@ -42,6 +43,7 @@ public class SimpleWrite {
                        System.out.println(hint);
                        String input = scanner.nextLine();
                        outputStream.write(input.getBytes());
+                       System.out.println("Msg " + input + " has been sent.");
                    }
                 }
             }
