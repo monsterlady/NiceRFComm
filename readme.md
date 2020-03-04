@@ -13,11 +13,16 @@ After installed the drive, run "***devmgmt. msc***" in CMD, find the COM that yo
 ***Don't continue if you can't find the COM niceRF connected to.***
 
 ## Set up Java SDK
+
+### JDK
+
  In order to avoid the conflict between 64 bits system and 32 bits compiler, Java 1.8 32 bits SDK recommended here.
  
  [Java 1.8 32bits SDK](https://drive.google.com/open?id=1SgkkbfbyQfqYOayK5sad947gG1jacfUn)
  
  *Please skip this step if you are using Java sdk 1.8*
+ 
+ ### java.comm package
  
  Since we are going to read Data from and write Data to Serial Port devices like : GSM modem, RFID Reader and some other devices that specifically made to Serial ports.
  So in that case we need to install Java communication API(Javax.comm package)
