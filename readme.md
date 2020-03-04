@@ -1,6 +1,6 @@
-#NiceRF LoRa 611AES Communication 
+# NiceRF LoRa 611AES Communication 
 
-##Set up LP2303 USB Cable
+## Set up LP2303 USB Cable
 
 First we need to download the drive for USB cable 
 
@@ -12,7 +12,7 @@ After installed the drive, run "***devmgmt. msc***" in CMD, find the COM that yo
 
 ***Don't continue if you can't find the COM niceRF connected to.***
 
-##Set up Java SDK
+## Set up Java SDK
  In order to avoid the conflict between 64 bits system and 32 bits compiler, Java 1.8 32 bits SDK recommended here.
  
  [Java 1.8 32bits SDK](https://drive.google.com/open?id=1SgkkbfbyQfqYOayK5sad947gG1jacfUn)
@@ -36,20 +36,20 @@ After installed the drive, run "***devmgmt. msc***" in CMD, find the COM that yo
  
  ***C:\Program Files (x86)\Java\jdk1.8.0_241\jre***
  
- ###win32com.dll
+ ### win32com.dll
  
  Make sure that ***win32com.dll*** (comes with javax.com) is in the ***- jre\bin*** directory.
  
  ![1.png](https://i.loli.net/2020/03/05/XjgdJBkl7M1wKbs.png)
  
  
- ###java.comm.properties
+ ### java.comm.properties
  
 Make sure that ***java.comm.properties*** (comes with javax.com) is in the ***- jre/lib*** directory.
 
 ![2.png](https://i.loli.net/2020/03/05/IV4qPxXzH2Wr7sv.png)
 
-###comm.jar
+### comm.jar
 
 Make sure that ***comm.jar*** (comes with javax.com) is in the ***- jre/lib/ext*** directory.
 
@@ -57,7 +57,7 @@ Make sure that ***comm.jar*** (comes with javax.com) is in the ***- jre/lib/ext*
 
 ---
 
-#Project configuration
+# Project configuration
 
 Clone project from *https://github.com/monsterlady/NiceRFComm.git*
 
