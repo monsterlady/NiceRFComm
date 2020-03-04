@@ -22,7 +22,7 @@ After installed the drive, run "***devmgmt. msc***" in CMD, find the COM that yo
  Since we are going to read Data from and write Data to Serial Port devices like : GSM modem, RFID Reader and some other devices that specifically made to Serial ports.
  So in that case we need to install Java communication API(Javax.comm package)
  
- [Javax.comm](https://drive.google.com/open?id=1jBmHFf2-2CnVSkVFSNY46u4NHsFLBLB3)
+ [Javax.comm](https://drive.google.com/open?id=1ZlIsZ9v4s5ZUW43unl1OfAx-s8cpCTLc)
  
  Once you download this File you will get a rar File named "javax.comm.zip". 
  
