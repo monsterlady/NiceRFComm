@@ -7,7 +7,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="comm3.0_solaris_i586" level="project" />
-    <orderEntry type="library" name="javax" level="project" />
   </component>
 </module>

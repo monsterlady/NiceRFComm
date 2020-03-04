@@ -19,9 +19,7 @@ public class SimpleRead implements Runnable, SerialPortEventListener {
             System.out.println(portId.getName());
             if (portId.getPortType() == CommPortIdentifier.PORT_SERIAL) {
                 if (portId.getName().equals("COM7")) {
-                    //                if (portId.getName().equals("/dev/term/a")) {
                     SimpleRead reader = new SimpleRead();
-
                 }
             }
         }
