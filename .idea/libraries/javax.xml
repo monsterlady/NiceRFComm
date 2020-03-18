@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="javax">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Desktop/java/javax.comm" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$USER_HOME$/Desktop/java/javax.comm" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://$USER_HOME$/Desktop/java/javax.comm/Sorce Code to Read From Serial Port" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Desktop/java/javax.comm" recursive="false" />
+  </library>
+</component>

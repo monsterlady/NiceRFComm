@@ -7,6 +7,7 @@ import java.util.TooManyListenersException;
 public class SimpleRead implements Runnable, SerialPortEventListener {
     static CommPortIdentifier portId;
     static Enumeration portList;
+    static String readCOM = "COM7";
 
     InputStream inputStream;
     SerialPort serialPort;
@@ -18,7 +19,7 @@ public class SimpleRead implements Runnable, SerialPortEventListener {
             portId = (CommPortIdentifier) portList.nextElement();
             System.out.println(portId.getName());
             if (portId.getPortType() == CommPortIdentifier.PORT_SERIAL) {
-                if (portId.getName().equals("COM3")) {
+                if (portId.getName().equals(readCOM)) {
                     SimpleRead reader = new SimpleRead();
                     System.out.println("Starting to listen...");
                 }
@@ -66,7 +67,7 @@ public class SimpleRead implements Runnable, SerialPortEventListener {
             case SerialPortEvent.OUTPUT_BUFFER_EMPTY:
                 break;
             case SerialPortEvent.DATA_AVAILABLE:
-                byte[] readBuffer = new byte[128];
+                byte[] readBuffer = new byte[62];
 
                 try {
                     while (inputStream.available() > 0) {

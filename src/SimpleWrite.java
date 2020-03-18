@@ -13,6 +13,7 @@ public class SimpleWrite {
     static String messageString = "";
     static SerialPort serialPort;
     static OutputStream outputStream;
+    private static String writeCOM = "COM7";
 
     public static void main(String[] args) throws IOException{
         portList = CommPortIdentifier.getPortIdentifiers();
@@ -21,7 +22,7 @@ public class SimpleWrite {
             portId = (CommPortIdentifier) portList.nextElement();
             System.out.println(portId.getName());
             if (portId.getPortType() == CommPortIdentifier.PORT_SERIAL) {
-                if (portId.getName().equals("COM3")) {
+                if (portId.getName().equals(writeCOM)) {
                     System.out.println("Ready to send msg...");
                     // if (portId.getName().equals("/dev/term/a")) {
                     try {
