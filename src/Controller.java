@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Controller implements Runnable, SerialPortEventListener {
     static CommPortIdentifier portId;
     static Enumeration portList;
-    static String com = "COM7";
+    static String com = "COM3";
 
     Thread controllerThread;
     OutputStream outputStream;
@@ -37,7 +37,7 @@ public class Controller implements Runnable, SerialPortEventListener {
             // Get the input/output streams for use in the application
             outputStream = serialPort.getOutputStream();
             inputStream = serialPort.getInputStream();
-            // Finally, add your event listener
+            // Finally, add event listener
             serialPort.addEventListener(this::serialEvent);
             //
             serialPort.notifyOnDataAvailable(true);
@@ -48,8 +48,6 @@ public class Controller implements Runnable, SerialPortEventListener {
         controllerThread = new Thread(this);
         controllerThread.start();
     }
-
-
 
     @Override
     public void serialEvent(SerialPortEvent event) {
@@ -66,13 +64,11 @@ public class Controller implements Runnable, SerialPortEventListener {
                 break;
             case SerialPortEvent.DATA_AVAILABLE:
                 byte[] readBuffer = new byte[62];
-
                 try {
                     while (inputStream.available() > 0) {
                         int numBytes = inputStream.read(readBuffer);
+                        System.out.print(new String(readBuffer,0,numBytes));
                     }
-                    System.out.write(readBuffer);
-                    System.out.println();
                 } catch (IOException e) {System.out.println(e);}
                 break;
         }
@@ -81,9 +77,8 @@ public class Controller implements Runnable, SerialPortEventListener {
 
     public static void main(String[] args) throws IOException {
         portList = CommPortIdentifier.getPortIdentifiers();
-        while (portList.hasMoreElements()) {
             portId = (CommPortIdentifier) portList.nextElement();
-            //System.out.println(portId.getName());
+            System.out.println(portId.getName());
             if (portId.getPortType() == CommPortIdentifier.PORT_SERIAL) {
                 if (portId.getName().equals(com)) {
                     System.out.println("Drone COM found :" + com);
@@ -99,7 +94,6 @@ public class Controller implements Runnable, SerialPortEventListener {
                     }
                 }
             }
-        }
     }
 
     @Override
