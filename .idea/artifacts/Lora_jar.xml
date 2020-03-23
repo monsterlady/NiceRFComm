@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Lora:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Lora_jar</output-path>
+    <root id="archive" name="Lora.jar">
+      <element id="module-output" name="Lora" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/comm.jar" path-in-jar="/" />
+      <element id="library" level="application" name="javax" />
+    </root>
+  </artifact>
+</component>

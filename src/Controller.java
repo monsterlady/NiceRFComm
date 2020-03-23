@@ -7,11 +7,13 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Enumeration;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Controller implements Runnable, SerialPortEventListener {
     static CommPortIdentifier portId;
     static Enumeration portList;
     static String com = "COM3";
+    static DataProvider dataProvider;
 
     Thread controllerThread;
     OutputStream outputStream;
@@ -31,6 +33,7 @@ public class Controller implements Runnable, SerialPortEventListener {
 
     public Controller(){
         try{
+            dataProvider = new DataProvider();
             // Open the port one time, then init your settings
             serialPort = (SerialPort)portId.open("TEAM3", 2000);
             serialPort.setSerialPortParams(9600, SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_NONE);
@@ -81,16 +84,24 @@ public class Controller implements Runnable, SerialPortEventListener {
             System.out.println(portId.getName());
             if (portId.getPortType() == CommPortIdentifier.PORT_SERIAL) {
                 if (portId.getName().equals(com)) {
-                    System.out.println("Drone COM found :" + com);
+                    System.out.println("Controller COM found :" + com);
                     Controller drone = new Controller();
                     System.out.println("Starting to work");
                     while(true){
                         Scanner scanner = new Scanner(System.in);
-                        String hint = "Msg to send: ";
+                        String hint = "Msg is able to send: ";
                         System.out.println(hint);
                         String input = scanner.nextLine();
-                        drone.outputStream.write(input.getBytes());
-                        System.out.println("Msg " + input + " has been sent.");
+                        String command = dataProvider.filterCommand(input);
+                        if(!command.equals("MSG WRONG")){
+                            drone.outputStream.write(command.getBytes());
+                            System.out.println("Command has been sent. \nWaiting for 99s...");
+                            //1%duty
+                            try { TimeUnit.SECONDS.sleep(99); ;
+                            } catch (InterruptedException ie){}
+                        } else {
+                            System.out.println("Msg can not send");
+                        }
                     }
                 }
             }
