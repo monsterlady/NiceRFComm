@@ -7,15 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5be5603-d785-4d3b-adb2-bdd6aaedc898" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Lora_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/comm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javax.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lora.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lora.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lora/SimpleRead.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lora/SimpleWrite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drone.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +80,7 @@
       <recent name="D:\Java project\lora\NiceRFComm\libs" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Controller">
+  <component name="RunManager" selected="Application.Drone">
     <configuration name="Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controller" />
       <module name="Lora" />
@@ -124,8 +118,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Controller" />
         <item itemvalue="Application.Drone" />
+        <item itemvalue="Application.Controller" />
         <item itemvalue="Application.DataProvider" />
         <item itemvalue="Application.SimpleWrite" />
         <item itemvalue="Application.SimpleRead" />
@@ -150,11 +144,26 @@
       <workItem from="1583925128892" duration="5591000" />
       <workItem from="1584629256610" duration="690000" />
       <workItem from="1584983646595" duration="9507000" />
+      <workItem from="1585003555939" duration="131000" />
+      <workItem from="1585039382967" duration="1483000" />
+      <workItem from="1585155193304" duration="2312000" />
     </task>
+    <task id="LOCAL-00001" summary="- Update drone end and Controller end">
+      <created>1585003588293</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585003588293</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Update drone end and Controller end" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Update drone end and Controller end" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="221" key="#com.intellij.ide.util.MemberChooser" timestamp="1584995226631">
@@ -169,10 +178,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584552581775" />
-    <state x="560" y="114" width="1139" height="812" key="CommitChangelistDialog2" timestamp="1583353323700">
+    <state x="560" y="114" width="1139" height="812" key="CommitChangelistDialog2" timestamp="1585003586560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="560" y="114" width="1139" height="812" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583353323700" />
+    <state x="560" y="114" width="1139" height="812" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585003586560" />
     <state x="714" y="235" key="DetectedRootsChooserDialog" timestamp="1584551672235">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -181,26 +190,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584552557853" />
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1584996254866">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1585157507865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584996254866" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1584996254866">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585157507865" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1585157507865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584996254866" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1584996254866">
+    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585157507865" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1585157507865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584996254866" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1584996254866">
+    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585157507865" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1585157507865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584996254866" />
-    <state x="440" y="95" key="SettingsEditor" timestamp="1584556407221">
+    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585157507865" />
+    <state x="440" y="95" key="SettingsEditor" timestamp="1585155612877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584556407221" />
+    <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585155612877" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585003595577">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585003595577" />
     <state x="789" y="379" key="classpath-attribute-editor" timestamp="1584552495403">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

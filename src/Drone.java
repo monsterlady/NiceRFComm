@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Drone extends Controller {
     private static String com = "COM3";
-    private static String tempCommand = "";
+    private static String tempCommand = "&^%#";
 
     public static void main(String[] args) throws IOException {
         portList = CommPortIdentifier.getPortIdentifiers();
@@ -18,7 +18,9 @@ public class Drone extends Controller {
                 System.out.println("Starting to work");
                 while(true){
                     if(!tempCommand.isEmpty()){
-                        drone.outputStream.write(tempCommand.getBytes());
+                        String measurment = dataProvider.probType(tempCommand);
+                        measurment = DataProvider.encrypt(measurment);
+                        drone.outputStream.write(measurment.getBytes());
                         System.out.println("Command has been sent.\nWaiting for 99s...");
                         //1%duty
                         try { TimeUnit.SECONDS.sleep(99); ;
