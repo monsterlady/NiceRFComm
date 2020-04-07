@@ -5,11 +5,24 @@ import javax.comm.SerialPortEventListener;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.MulticastSocket;
 import java.util.Enumeration;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Controller implements Runnable, SerialPortEventListener {
+    //Address for receiving messages
+    private final static String INET_ADDR = "224.0.0.3";
+    //Port for receiving messages
+    private final static int PORT = 8888;
+
+    private InetAddress ia;
+
+    private DatagramSocket serverSocket;
+
     static CommPortIdentifier portId;
     static Enumeration portList;
     static String com = "COM3";
@@ -32,7 +45,15 @@ public class Controller implements Runnable, SerialPortEventListener {
      */
 
     public Controller(){
+
         try{
+            //Socket for sending messages to the basecamp
+            //Socket for receiving messages from the basecamp
+            ia = InetAddress.getByName(INET_ADDR);
+            MulticastSocket ms = new MulticastSocket(PORT);
+            //Subscribe to the address in order to receive all messages that were sent to that address
+            ms.joinGroup(ia);
+            serverSocket = new DatagramSocket();
             dataProvider = new DataProvider();
             // Open the port one time, then init your settings
             serialPort = (SerialPort)portId.open("TEAM3", 2000);
@@ -71,6 +92,16 @@ public class Controller implements Runnable, SerialPortEventListener {
                     while (inputStream.available() > 0) {
                         int numBytes = inputStream.read(readBuffer);
                         System.out.print(new String(readBuffer,0,numBytes));
+
+                        //Wrap the message into packet
+                        DatagramPacket msgPacket =
+                                new DatagramPacket(readBuffer, readBuffer.length,ia,PORT);
+                        try {
+                            //Broadcast the packet to the basecamp
+                            serverSocket.send(msgPacket);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 } catch (IOException e) {System.out.println(e);}
                 break;

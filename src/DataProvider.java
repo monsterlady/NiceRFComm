@@ -133,10 +133,7 @@ public class DataProvider {
         }
     }
 
-
-
-    public String probType(String command)
-    {
+    public String probType(String command) {
         String output = "";
         switch (command){
             case CommandData.ATTACK:
